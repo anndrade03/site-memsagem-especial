@@ -1,0 +1,273 @@
+/* Importação de uma fonte bonita, se desejar */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap');
+
+:root {
+    /* Definição de variáveis para cores */
+    /* NOVO VERMELHO CLARO (Exemplo: #FF4D4D) */
+    --primary-color: #FF4D4D; 
+    --secondary-color: #000000; /* Preto para o contorno */
+    --background-color: #ffffff; /* Fundo branco */
+}
+
+/* Estilos Globais */
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+    /* AJUSTE: Cor de todos os textos para preto puro (#000) */
+    color: #000; 
+    
+    min-height: 100vh; 
+    position: relative; 
+    overflow-x: hidden; 
+}
+
+/* Container principal para centralizar o conteúdo */
+.content-wrapper {
+    max-width: 900px; 
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; 
+    z-index: 10; 
+}
+
+/* --- Título Principal --- */
+.main-title {
+    font-family: 'Pacifico', cursive; 
+    text-align: center;
+    font-size: 3em;
+    color: var(--primary-color);
+    /* Contorno com a propriedade text-shadow */
+    text-shadow: 
+        -1px -1px 0 var(--secondary-color),  
+        1px -1px 0 var(--secondary-color),
+        -1px 1px 0 var(--secondary-color),
+        1px 1px 0 var(--secondary-color);
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* --- Textos --- */
+.first-text, .second-text, .whatsapp-text {
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 1.6;
+    padding: 0 10px; 
+}
+
+/* AJUSTE: Adicionando Negrito ao segundo texto */
+.second-text {
+    font-weight: bold; 
+}
+
+/* Garante o negrito no texto solicitado (primeiro texto) */
+.first-text strong {
+    font-weight: 700; 
+}
+
+/* --- Seção das Duas Fotos (Centralizadas) --- */
+.photo-pair-section {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    margin: 40px 0;
+    flex-wrap: wrap; 
+}
+
+.photo-container {
+    width: 100%; 
+    max-width: 300px; /* Ajuste o tamanho máximo aqui, se desejar */
+    overflow: hidden; 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-out; 
+}
+
+.zoomable-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-out; 
+}
+
+/* Efeito ao passar o mouse (hover) */
+.photo-container:hover {
+    transform: translateY(-5px); 
+}
+.photo-container:hover .zoomable-photo {
+    transform: scale(1.05) rotate(1deg); 
+}
+
+/* --- Separador --- */
+.separator {
+    border: none;
+    border-top: 1px solid #ffcccc;
+    margin: 40px 0;
+}
+
+.separator-space {
+    height: 50px; 
+}
+
+/* --- Seção das Três Fotos (Lado a Lado) --- */
+.photo-trio-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+    flex-wrap: wrap; 
+}
+
+.trio-photo {
+    width: calc(33.33% - 10px); 
+    max-width: 200px; /* Ajuste o tamanho máximo aqui, se desejar */
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.trio-photo:hover {
+    transform: scale(1.08); 
+}
+
+
+/* --- Seção da Música e Botão --- */
+.music-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 40px 0;
+}
+
+.music-cover {
+    width: 100%;
+    max-width: 150px; /* Ajuste o tamanho máximo aqui, se desejar */
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#play-pause-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--background-color);
+    background-color: #ff6666; 
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#play-pause-btn:hover {
+    background-color: #ff4d4d;
+}
+
+#play-pause-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* --- Botão WhatsApp --- */
+.whatsapp-text {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.whatsapp-btn {
+    display: block; 
+    width: fit-content;
+    margin: 20px auto 50px auto; 
+    padding: 12px 30px;
+    background-color: #25D366; 
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+/* ========================================================= */
+/* --- Efeito Corações e Rosas Caindo (Animação) SUTIL --- */
+/* ========================================================= */
+.falling-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 5; 
+    overflow: hidden;
+}
+
+.falling-element {
+    position: absolute;
+    color: #ff6699; 
+    font-size: 1.2em; 
+    animation: fall linear infinite;
+    opacity: 0.35; 
+}
+
+/* Animação que faz o elemento cair */
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.35; 
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* ========================================================= */
+/* --- Responsividade (Ajustes para Mobile) --- */
+/* ========================================================= */
+@media (max-width: 600px) {
+    
+    .main-title {
+        font-size: 2.5em; 
+    }
+
+    .photo-pair-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .photo-container {
+        max-width: 90%; 
+    }
+
+    .photo-trio-section {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .trio-photo {
+        width: 45%; 
+        max-width: none;
+    }
+
+    .whatsapp-btn {
+        font-size: 1.1em;
+        padding: 10px 25px;
+    }
+}
